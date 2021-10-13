@@ -6,8 +6,8 @@
 //
 
 import Foundation
-class RequestWitCclosure{
-    public static func request<T : Decodable>(_ url: String,_ ofType: T.Type, listener: @escaping (T?, Error?) -> ()){
+public class RequestWitCclosure{
+    static func request<T : Decodable>(_ url: String,_ ofType: T.Type, listener: @escaping (T?, Error?) -> ()){
         let url = URL(string: url)!
         let urlRequest = URLRequest(url: url)
         let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
